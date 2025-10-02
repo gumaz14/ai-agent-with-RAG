@@ -7,19 +7,15 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 px-6 py-24 lg:px-8">
+      <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/20 px-6 py-8 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary text-sm">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary text-sm">
             <Sparkles className="h-4 w-4" />
             <span>AI-Powered Knowledge Assistants</span>
           </div>
-          <h1 className="mb-6 font-bold text-5xl text-balance tracking-tight lg:text-6xl">
-            Specialized AI Agents for Deep Learning
+          <h1 className="mb-3 font-bold text-3xl text-balance tracking-tight lg:text-4xl">
+            AI Study Assistants
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-balance text-muted-foreground leading-relaxed">
-            Access expert AI assistants powered by retrieval-augmented generation. Get accurate, sourced answers from
-            specialized knowledge bases.
-          </p>
           <div className="flex items-center justify-center gap-2 text-muted-foreground text-sm">
             <Database className="h-4 w-4" />
             <span>Powered by vector search and AI SDK</span>
@@ -28,11 +24,11 @@ export default function Home() {
       </section>
 
       {/* Agent Cards */}
-      <section className="px-6 py-16 lg:px-8">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+      <section className="px-6 py-6 lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2">
           {/* DMBOK Agent Card */}
           <Card className="group relative overflow-hidden transition-all hover:shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none" />
             <CardHeader>
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500/10">
                 <BookOpen className="h-6 w-6 text-blue-600" />
@@ -61,23 +57,21 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <Link href="/chat/dmbok">
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 group-hover:shadow-md">
-                  Start Learning
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+              <Link href="/chat/dmbok" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-xs hover:shadow-md">
+                Start Learning
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </CardContent>
           </Card>
 
           {/* Zimbabwe History Agent Card */}
           <Card className="group relative overflow-hidden transition-all hover:shadow-lg">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-amber-600/5 opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-amber-600/5 opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none" />
             <CardHeader>
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-amber-500/10">
                 <History className="h-6 w-6 text-amber-600" />
               </div>
-              <CardTitle className="text-2xl">Zimbabwe History Scholar</CardTitle>
+              <CardTitle className="text-2xl">Zimbabwe middle class during colonial era</CardTitle>
               <CardDescription className="text-base leading-relaxed">
                 Expert on the African middle class during colonial Zimbabwe. Explore the social, economic, and political
                 dynamics that shaped this pivotal period in history.
@@ -101,11 +95,9 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <Link href="/chat/zimbabwe">
-                <Button className="w-full bg-gradient-to-r from-amber-500 to-amber-600 group-hover:shadow-md">
-                  Explore History
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+              <Link href="/chat/zimbabwe" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-xs hover:shadow-md">
+                Explore History
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </CardContent>
           </Card>
@@ -113,10 +105,10 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-muted/30 px-6 py-16 lg:px-8">
+      <section className="bg-muted/30 px-6 py-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-12 text-center font-bold text-3xl">How It Works</h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <h2 className="mb-6 text-center font-bold text-2xl">How It Works</h2>
+          <div className="grid gap-4 md:grid-cols-3">
             <Card>
               <CardHeader>
                 <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
@@ -164,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="mt-auto border-t px-6 py-8">
+      <footer className="mt-auto border-t px-6 py-4">
         <div className="mx-auto max-w-6xl text-center text-muted-foreground text-sm">
           <p>Built with Next.js, AI SDK, and Vector Search</p>
         </div>

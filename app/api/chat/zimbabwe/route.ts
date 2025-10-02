@@ -7,9 +7,14 @@ import {
   type UIMessage,
   validateUIMessages,
 } from "ai"
+import { createOpenAI } from "@ai-sdk/openai"
 import { z } from "zod"
 import { searchVectorDB } from "@/lib/vector-db"
 import { agentConfigs } from "@/lib/agent-configs"
+
+const openai = createOpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
 
 export const maxDuration = 30
 
@@ -56,7 +61,7 @@ export async function POST(req: Request) {
   const config = agentConfigs.zimbabwe
 
   const result = streamText({
-    model: "openai/gpt-4o-mini",
+    model: openai("gpt-4o-mini"),
     system: config.systemPrompt,
     messages: convertToModelMessages(messages),
     maxSteps: 5,
